@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2, ArrowRight, Heart, Lightbulb, Shield } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Meet Aimee, founder of Razor Accounting — 15+ years of experience in tax, bookkeeping, and business advisory for small businesses in Sechelt, BC.",
+  alternates: { canonical: "/about" },
+};
 
 const values = [
   {
