@@ -319,7 +319,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Photo + quote card */}
-            <div className="relative">
+            <div className="relative lg:order-2">
               <div className="relative aspect-[4/5] max-w-md rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/aimee.jpg"
@@ -350,7 +350,7 @@ export default function Home() {
             </div>
 
             {/* Text */}
-            <div>
+            <div className="lg:order-1">
               <span className="text-accent text-sm font-semibold uppercase tracking-widest">
                 About
               </span>
