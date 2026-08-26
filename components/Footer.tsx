@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 
 const quickLinks = [
@@ -15,9 +16,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-1 mb-4">
-              <span className="text-xl font-black text-accent">Razor</span>
-              <span className="text-xl font-light text-white">Accounting</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/logo.png"
+                alt="Razor Accounting"
+                width={350}
+                height={113}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Sharp accounting services for small businesses and entrepreneurs

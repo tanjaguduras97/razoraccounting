@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle2, ArrowRight, Heart, Lightbulb, Shield } from "lucide-react";
 
 const values = [
@@ -62,15 +63,16 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Avatar placeholder */}
+            {/* Photo */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-surface flex items-center justify-center max-w-md">
-                <div className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-brand-dark/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl font-black text-brand">A</span>
-                  </div>
-                  <p className="text-slate-400 text-sm">Photo coming soon</p>
-                </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-white max-w-md shadow-lg">
+                <Image
+                  src="/aimee.jpg"
+                  alt="Aimee, Founder of Razor Accounting"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
               {/* Stats overlay */}
               <div className="absolute -right-4 bottom-12 bg-white rounded-xl shadow-xl p-5 border border-slate-100">
