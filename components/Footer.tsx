@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.instagram.com/razoradvisory/"
+                href="https://www.instagram.com/razor_accounting/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 hover:text-accent transition-colors"
