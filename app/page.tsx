@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   BookOpen,
   FileText,
@@ -10,6 +11,7 @@ import {
   Briefcase,
   ArrowRight,
   CheckCircle2,
+  DollarSign,
 } from "lucide-react";
 
 const services = [
@@ -87,53 +89,102 @@ export default function Home() {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand/30 via-transparent to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-6">
-              <span className="w-6 h-px bg-accent" />
-              Sechelt, BC · Small Business Specialists
-            </span>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-6">
+                <span className="w-6 h-px bg-accent" />
+                Sechelt, BC · Small Business Specialists
+              </span>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8">
-              Sharp accounting.
-              <br />
-              <span className="text-accent">Clear results.</span>
-            </h1>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8">
+                Sharp accounting.
+                <br />
+                <span className="text-accent">Clear results.</span>
+              </h1>
 
-            <p className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-xl mb-10">
-              Razor Accounting helps small businesses and entrepreneurs in
-              Sechelt, BC stay organized, minimize taxes, and grow with
-              confidence.
-            </p>
+              <p className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-xl mb-10">
+                Razor Accounting helps small businesses and entrepreneurs in
+                Sechelt, BC stay organized, minimize taxes, and grow with
+                confidence.
+              </p>
 
-            <div className="flex flex-wrap gap-4 mb-16">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-accent text-white font-semibold hover:bg-accent-light transition-all duration-200 shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5"
-              >
-                View Services
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:border-white/40 hover:bg-white/5 transition-all duration-200"
-              >
-                Book a Consultation
-              </Link>
+              <div className="flex flex-wrap gap-4 mb-16">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-accent text-white font-semibold hover:bg-accent-light transition-all duration-200 shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5"
+                >
+                  View Services
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:border-white/40 hover:bg-white/5 transition-all duration-200"
+                >
+                  Book a Consultation
+                </Link>
+              </div>
+
+              {/* Stats */}
+              <div className="flex flex-wrap gap-8">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-3xl font-black text-white">
+                      {stat.value}
+                    </div>
+                    <div className="text-white/50 text-sm mt-0.5">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-black text-white">
-                    {stat.value}
+            {/* Decorative visual */}
+            <div className="hidden lg:block relative h-[480px]">
+              <div className="absolute top-6 right-4 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-light/30 rounded-full blur-3xl" />
+
+              <div className="absolute top-2 right-2 w-56 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl rotate-3">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                    <TrendingUp size={18} className="text-accent" />
                   </div>
-                  <div className="text-white/50 text-sm mt-0.5">
-                    {stat.label}
+                  <div className="text-white text-sm font-semibold">
+                    Monthly Growth
                   </div>
                 </div>
-              ))}
+                <div className="text-3xl font-black text-white">+24%</div>
+                <div className="text-white/50 text-xs mt-1">
+                  vs. last quarter
+                </div>
+              </div>
+
+              <div className="absolute top-56 left-0 w-52 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl -rotate-2">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                    <CheckCircle2 size={18} className="text-accent" />
+                  </div>
+                  <div className="text-white text-sm font-semibold">
+                    Tax Filed
+                  </div>
+                </div>
+                <div className="text-white/50 text-xs">
+                  On time, every time
+                </div>
+              </div>
+
+              <div className="absolute bottom-6 right-10 w-56 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl rotate-2">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+                    <DollarSign size={18} className="text-accent" />
+                  </div>
+                  <div className="text-white text-sm font-semibold whitespace-nowrap">
+                    Savings Found
+                  </div>
+                </div>
+                <div className="text-3xl font-black text-white">$12K</div>
+              </div>
             </div>
           </div>
         </div>
@@ -195,30 +246,35 @@ export default function Home() {
       <section className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Quote card */}
+            {/* Photo + quote card */}
             <div className="relative">
-              <div className="rounded-2xl bg-brand-dark p-10 text-white">
-                <div className="text-5xl font-black text-accent/30 leading-none mb-4">
-                  &ldquo;
-                </div>
-                <p className="text-white/80 text-xl leading-relaxed font-light italic">
-                  I believe every small business owner deserves a sharp,
-                  proactive accountant who treats their finances like their own.
-                </p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span className="text-accent font-bold text-lg">A</span>
+              <div className="relative aspect-[4/5] max-w-md rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/aimee.jpg"
+                  alt="Aimee, Founder of Razor Accounting"
+                  fill
+                  sizes="(min-width: 1024px) 448px, 90vw"
+                  className="object-cover object-top"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="text-4xl font-black text-accent/40 leading-none mb-2">
+                    &ldquo;
                   </div>
-                  <div>
-                    <div className="font-semibold text-white">Aimee</div>
-                    <div className="text-white/50 text-sm">
-                      Founder, Razor Accounting
-                    </div>
+                  <p className="text-white/90 text-lg leading-relaxed font-light italic mb-4">
+                    I believe every small business owner deserves a sharp,
+                    proactive accountant who treats their finances like their
+                    own.
+                  </p>
+                  <div className="font-semibold text-white">Aimee</div>
+                  <div className="text-white/60 text-sm">
+                    Founder, Razor Accounting
                   </div>
                 </div>
               </div>
               {/* Decorative accent bar */}
-              <div className="absolute -bottom-3 left-10 right-10 h-1 bg-accent rounded-full opacity-60" />
+              <div className="absolute -bottom-3 left-10 right-10 h-1 bg-accent rounded-full opacity-60 max-w-md" />
             </div>
 
             {/* Text */}
