@@ -70,8 +70,10 @@ export default function AboutPage() {
                   src="/aimee.jpg"
                   alt="Aimee, Founder of Razor Accounting"
                   fill
+                  sizes="(min-width: 1024px) 448px, 90vw"
                   className="object-cover object-top"
                   priority
+                  unoptimized
                 />
               </div>
               {/* Stats overlay */}
