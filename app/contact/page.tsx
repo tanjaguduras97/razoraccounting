@@ -39,10 +39,25 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    setSubmitted(true);
+    setError(false);
+    try {
+      const data = new FormData(e.currentTarget);
+      const body = new URLSearchParams(
+        Array.from(data.entries(), ([key, value]) => [key, String(value)])
+      );
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    }
   };
 
   const inputClass =
@@ -175,9 +190,34 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="company"
                   onSubmit={handleSubmit}
                   className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm space-y-5"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>
+                      Don&apos;t fill this out: <input name="company" />
+                    </label>
+                  </p>
+
+                  {error && (
+                    <div className="rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3">
+                      Something went wrong sending your message. Please email
+                      us directly at{" "}
+                      <a
+                        href="mailto:info@razoraccounting.com"
+                        className="underline"
+                      >
+                        info@razoraccounting.com
+                      </a>
+                      .
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-semibold text-brand-dark mb-1.5">
