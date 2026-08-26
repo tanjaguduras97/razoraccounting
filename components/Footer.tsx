@@ -106,7 +106,26 @@ export default function Footer() {
           <p className="text-white/40 text-xs">
             © {new Date().getFullYear()} Razor Accounting. All rights reserved.
           </p>
-          <p className="text-white/30 text-xs">Built for small businesses.</p>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/privacy-policy"
+              className="text-white/40 hover:text-white text-xs transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-white/40 hover:text-white text-xs transition-colors"
+            >
+              Terms of Use
+            </Link>
+            <Link
+              href="/accessibility"
+              className="text-white/40 hover:text-white text-xs transition-colors"
+            >
+              Accessibility
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BookOpen,
@@ -9,6 +10,13 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Bookkeeping, personal and corporate tax returns, tax planning, business management, and bookkeeping training — accounting services for small businesses in Sechelt, BC.",
+  alternates: { canonical: "/services" },
+};
 
 const services = [
   {
