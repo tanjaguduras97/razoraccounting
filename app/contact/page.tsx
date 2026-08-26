@@ -75,8 +75,7 @@ export default function ContactPage() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-            <span className="w-6 h-px bg-accent" />
+          <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">
             Let&apos;s Talk
           </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight mt-2">
@@ -101,8 +100,8 @@ export default function ContactPage() {
                 </h2>
                 <ul className="space-y-5">
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-brand-dark flex items-center justify-center shrink-0">
-                      <MapPin size={16} className="text-accent" />
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shrink-0 shadow-sm shadow-accent/20">
+                      <MapPin size={16} className="text-white" />
                     </div>
                     <div>
                       <div className="font-semibold text-brand-dark text-sm mb-0.5">
@@ -114,8 +113,8 @@ export default function ContactPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-brand-dark flex items-center justify-center shrink-0">
-                      <Phone size={16} className="text-accent" />
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shrink-0 shadow-sm shadow-accent/20">
+                      <Phone size={16} className="text-white" />
                     </div>
                     <div>
                       <div className="font-semibold text-brand-dark text-sm mb-0.5">
@@ -130,8 +129,8 @@ export default function ContactPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-brand-dark flex items-center justify-center shrink-0">
-                      <Mail size={16} className="text-accent" />
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shrink-0 shadow-sm shadow-accent/20">
+                      <Mail size={16} className="text-white" />
                     </div>
                     <div>
                       <div className="font-semibold text-brand-dark text-sm mb-0.5">
@@ -146,8 +145,8 @@ export default function ContactPage() {
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-brand-dark flex items-center justify-center shrink-0">
-                      <Clock size={16} className="text-accent" />
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shrink-0 shadow-sm shadow-accent/20">
+                      <Clock size={16} className="text-white" />
                     </div>
                     <div>
                       <div className="font-semibold text-brand-dark text-sm mb-0.5">

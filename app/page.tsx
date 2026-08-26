@@ -92,8 +92,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-6">
-                <span className="w-6 h-px bg-accent" />
+              <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-6 block">
                 Sechelt, BC · Small Business Specialists
               </span>
 
@@ -216,8 +215,8 @@ export default function Home() {
                 key={title}
                 className="group p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white"
               >
-                <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center mb-5 group-hover:bg-accent/10 transition-colors">
-                  <Icon size={22} className="text-brand group-hover:text-accent transition-colors" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-5 shadow-md shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
+                  <Icon size={22} className="text-white" />
                 </div>
                 <h3 className="font-bold text-brand-dark mb-2">{title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
@@ -339,8 +338,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {reasons.map(({ icon: Icon, title, description }) => (
               <div key={title} className="text-center">
-                <div className="w-14 h-14 rounded-2xl bg-surface flex items-center justify-center mx-auto mb-5 shadow-sm">
-                  <Icon size={24} className="text-brand" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mx-auto mb-5 shadow-md shadow-accent/20">
+                  <Icon size={24} className="text-white" />
                 </div>
                 <h3 className="font-bold text-brand-dark mb-2">{title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
