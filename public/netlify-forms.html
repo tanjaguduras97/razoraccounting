@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form detection (not a real page)</title>
+  </head>
+  <body>
+    <!--
+      This file exists only so Netlify's build-time form detection can find
+      and register these forms. It is never linked to or visited by users -
+      the real forms live in app/contact/page.tsx and components/ChecklistForm.tsx
+      and submit the same way. Do not delete this file or the field names
+      below without keeping them in sync with those forms.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="company" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option value="Bookkeeping">Bookkeeping</option>
+        <option value="Personal Tax Return">Personal Tax Return</option>
+        <option value="Corporate Tax Return">Corporate Tax Return</option>
+        <option value="Tax Planning">Tax Planning</option>
+        <option value="Business Management">Business Management</option>
+        <option value="Bookkeeping Training">Bookkeeping Training</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input name="company" />
+    </form>
+
+    <form name="checklist" data-netlify="true" netlify-honeypot="company" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input name="company" />
+    </form>
+  </body>
+</html>
