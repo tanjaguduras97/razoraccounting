@@ -255,24 +255,26 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-            {/* Decorative panel */}
+            {/* Photo panel */}
             <div className="relative hidden lg:block">
-              <div className="relative h-full rounded-2xl bg-gradient-to-br from-brand-dark to-brand p-14 overflow-hidden flex flex-col items-center justify-center">
-                <div
-                  className="absolute inset-0 opacity-[0.06]"
-                  style={{
-                    backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
-                    backgroundSize: "40px 40px",
-                  }}
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/accounting.webp"
+                  alt="Bookkeeping and accounting records"
+                  fill
+                  sizes="(min-width: 1024px) 500px, 90vw"
+                  className="object-cover"
+                  unoptimized
                 />
-                <div className="absolute top-8 right-8 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
-                <div className="absolute bottom-8 left-8 w-40 h-40 bg-brand-light/20 rounded-full blur-3xl" />
-                <div className="relative w-24 h-24 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center mx-auto">
-                  <ClipboardCheck size={44} className="text-accent" />
-                </div>
-                <div className="relative mt-8 text-center text-white/70 text-sm max-w-xs">
-                  A quick, practical checklist — straight from Aimee&apos;s
-                  own process.
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/10 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-4 shadow-lg">
+                    <ClipboardCheck size={26} className="text-white" />
+                  </div>
+                  <p className="text-white text-sm max-w-xs">
+                    A quick, practical checklist — straight from Aimee&apos;s
+                    own process.
+                  </p>
                 </div>
               </div>
             </div>
