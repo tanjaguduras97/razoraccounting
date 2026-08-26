@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ChecklistForm from "@/components/ChecklistForm";
 import {
   BookOpen,
   FileText,
@@ -12,7 +13,16 @@ import {
   ArrowRight,
   CheckCircle2,
   DollarSign,
+  ClipboardCheck,
 } from "lucide-react";
+
+const checklistPoints = [
+  "7 essential tasks to hand off to your bookkeeper before they cost you extra money on your accounting bill",
+  "What to do with unusual or out of the ordinary items you send to your bookkeeper",
+  "Simple strategy for staying organized with the pile of receipts that end up in a box or drawer",
+  "The correct way to handle your Retained Earnings",
+  "10 General Ledger Accounts and what to do with them",
+];
 
 const services = [
   {
@@ -237,6 +247,67 @@ export default function Home() {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Free Checklist Opt-in ────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+            {/* Decorative panel */}
+            <div className="relative hidden lg:block">
+              <div className="relative h-full rounded-2xl bg-gradient-to-br from-brand-dark to-brand p-14 overflow-hidden flex flex-col items-center justify-center">
+                <div
+                  className="absolute inset-0 opacity-[0.06]"
+                  style={{
+                    backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+                    backgroundSize: "40px 40px",
+                  }}
+                />
+                <div className="absolute top-8 right-8 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
+                <div className="absolute bottom-8 left-8 w-40 h-40 bg-brand-light/20 rounded-full blur-3xl" />
+                <div className="relative w-24 h-24 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center mx-auto">
+                  <ClipboardCheck size={44} className="text-accent" />
+                </div>
+                <div className="relative mt-8 text-center text-white/70 text-sm max-w-xs">
+                  A quick, practical checklist — straight from Aimee&apos;s
+                  own process.
+                </div>
+              </div>
+            </div>
+
+            {/* Copy + form */}
+            <div className="rounded-2xl bg-surface p-8 sm:p-10">
+              <span className="text-accent text-sm font-semibold uppercase tracking-widest block mb-3">
+                Get Your Free Checklist!
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-brand-dark tracking-tight mb-5">
+                7 Steps to Slashing Your Corporate Accounting Fees
+              </h2>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                A simple report that shows you the 7 things you need to do to
+                save money, keep the Tax Man away, and optimize the way you
+                manage the money flow in your business.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {checklistPoints.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-3 text-slate-600 text-sm"
+                  >
+                    <CheckCircle2
+                      size={16}
+                      className="shrink-0 mt-0.5 text-accent"
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <ChecklistForm />
+            </div>
           </div>
         </div>
       </section>
