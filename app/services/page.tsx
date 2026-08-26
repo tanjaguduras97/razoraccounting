@@ -104,8 +104,7 @@ export default function ServicesPage() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-            <span className="w-6 h-px bg-accent" />
+          <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">
             What We Offer
           </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight mt-2">
@@ -128,8 +127,8 @@ export default function ServicesPage() {
                 className="bg-white rounded-2xl p-8 border border-slate-100 hover:border-accent/30 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-xl bg-surface flex items-center justify-center shrink-0 group-hover:bg-accent/10 transition-colors">
-                    <Icon size={24} className="text-brand group-hover:text-accent transition-colors" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shrink-0 shadow-md shadow-accent/20 group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={24} className="text-white" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-4 flex-wrap">

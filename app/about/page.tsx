@@ -45,8 +45,7 @@ export default function AboutPage() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-flex items-center gap-2 text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-            <span className="w-6 h-px bg-accent" />
+          <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">
             The People Behind Razor
           </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight mt-2">
@@ -158,8 +157,8 @@ export default function AboutPage() {
                 key={title}
                 className="bg-white rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-surface flex items-center justify-center mb-6">
-                  <Icon size={24} className="text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-6 shadow-md shadow-accent/20">
+                  <Icon size={24} className="text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-brand-dark mb-3">
                   {title}
